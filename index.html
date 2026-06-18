@@ -98,6 +98,7 @@
     .hero-title .line:nth-child(2) span{transition-delay:0.1s}
     .hero-title .line:nth-child(3) span{transition-delay:0.2s}
     .hero-title .gold-text{background:var(--metallic);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:shimmerText 4s infinite}
+    .gold-text{background:var(--metallic);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% 200%;animation:shimmerText 4s infinite}
     .hero-title .red-text{color:var(--red)}
     .hero-subtitle{max-width:500px;font-size:1rem;color:var(--text-secondary);line-height:1.7;opacity:0;transform:translateY(20px);transition:all 0.8s 0.4s}
     .hero-subtitle.show{opacity:1;transform:translateY(0)}
@@ -246,6 +247,42 @@
     .edu-highlight{display:inline-flex;align-items:center;gap:0.5rem;padding:0.5rem 1rem;background:rgba(255,0,51,0.1);border:1px solid rgba(255,0,51,0.3);border-radius:60px;font-size:0.75rem;font-weight:600;color:var(--red);margin-top:1rem}
 
 
+    /* MEDIA & PRESS */
+    #media{padding:8rem 0;background:#000;position:relative}
+    #media::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+    .media-header{text-align:center;margin-bottom:4rem}
+    .media-header h2{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800}
+    @media(min-width:768px){.media-header h2{font-size:4rem}}
+    .media-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+    @media(min-width:768px){.media-grid{grid-template-columns:repeat(2,1fr)}}
+    .media-card{background:var(--dark-card);border:1px solid var(--line);border-radius:1.5rem;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s}
+    .media-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(212,175,55,0.15)}
+    .media-img-wrap{width:100%;height:250px;overflow:hidden;position:relative}
+    .media-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+    .media-card:hover .media-img-wrap img{transform:scale(1.05)}
+    .media-info{padding:1.75rem}
+    .media-source{font-size:0.7rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem}
+    .media-info h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
+    .media-info p{font-size:0.85rem;color:var(--text-muted);line-height:1.7}
+
+    /* CREATIVE SIDE */
+    #creative{padding:8rem 0;background:var(--dark);position:relative}
+    #creative::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+    .creative-header{text-align:center;margin-bottom:1.5rem}
+    .creative-header h2{font-family:'Playfair Display',serif;font-size:3rem;font-weight:800}
+    @media(min-width:768px){.creative-header h2{font-size:4rem}}
+    .creative-intro{text-align:center;max-width:600px;margin:0 auto 4rem;font-size:1rem;color:var(--text-secondary);line-height:1.7}
+    .creative-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+    @media(min-width:768px){.creative-grid{grid-template-columns:repeat(2,1fr)}}
+    .creative-card{background:var(--dark-card);border:1px solid var(--line);border-radius:1.5rem;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s}
+    .creative-card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(255,0,51,0.15)}
+    .creative-img-wrap{width:100%;height:350px;overflow:hidden}
+    .creative-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.5s}
+    .creative-card:hover .creative-img-wrap img{transform:scale(1.05)}
+    .creative-label{display:inline-block;margin:1.5rem 1.5rem 0.5rem;padding:0.35rem 0.9rem;background:rgba(255,0,51,0.15);border:1px solid rgba(255,0,51,0.3);border-radius:60px;font-size:0.65rem;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:0.05em}
+    .creative-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin:0.5rem 1.5rem;line-height:1.3}
+    .creative-card p{font-size:0.85rem;color:var(--text-muted);line-height:1.6;margin:0.5rem 1.5rem 1.75rem}
+
     /* FOOTER */
     #footer{padding:6rem 0 3rem;background:var(--dark-card);position:relative;overflow:hidden}
     #footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:var(--metallic)}
@@ -323,6 +360,8 @@
         <button onclick="scrollTo('experience')">Experience</button>
         <button onclick="scrollTo('skills')">Skills</button>
         <button onclick="scrollTo('projects')">Projects</button>
+        <button onclick="scrollTo('media')">Media</button>
+        <button onclick="scrollTo('creative')">Creative</button>
         <button onclick="scrollTo('education')">Education</button>
       </nav>
       <div class="header-cta">
@@ -359,7 +398,8 @@
           <div class="photo-border"></div>
           <div class="photo-inner">
             <!-- REPLACE src WITH YOUR PHOTO URL -->
-            <div class="photo-placeholder">AJ</div>
+            <!-- YOUR PROFILE PHOTO -->
+            <img src="images/profile.jpg" alt="Annie Juliyana" style="width:100%;height:100%;object-fit:cover;object-position:center top">
           </div>
           <div class="photo-drip"></div>
           <div class="floating-badge badge-top">
@@ -517,6 +557,67 @@
   </section>
 
 
+  <!-- MEDIA & PRESS -->
+  <section id="media">
+    <div class="container">
+      <div class="media-header reveal">
+        <span class="section-label">In the News</span>
+        <h2>Media & <span class="gold-text">Press</span></h2>
+      </div>
+      <div class="media-grid">
+        <div class="media-card reveal">
+          <div class="media-img-wrap">
+            <img src="images/press-meet.jpg" alt="Annie Juliyana at Chennai Press Club - Sun News Live">
+          </div>
+          <div class="media-info">
+            <div class="media-source">Sun News Live • Chennai Press Club</div>
+            <h3>Tamil Nadu Election Opinion Poll Press Meet</h3>
+            <p>Presented Agni News Service's constituency-wise election opinion poll findings at Chennai Press Club, covered live by Sun News, ANI & multiple Tamil media outlets.</p>
+          </div>
+        </div>
+        <div class="media-card reveal">
+          <div class="media-img-wrap">
+            <img src="images/newspaper.jpg" alt="Dhina Tamil newspaper featuring Annie's election analysis">
+          </div>
+          <div class="media-info">
+            <div class="media-source">Dhina Tamil • Newspaper Feature</div>
+            <h3>Opinion Poll Analysis — 1,01,643 Voters Surveyed</h3>
+            <p>Featured in Dhina Tamil for Agni News Service's comprehensive constituency-wise opinion poll covering over 1 lakh voters across all Tamil Nadu assembly segments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATIVE SIDE -->
+  <section id="creative">
+    <div class="container">
+      <div class="creative-header reveal">
+        <span class="section-label">Beyond Data</span>
+        <h2>Creative <span class="gold-text">Side</span></h2>
+      </div>
+      <p class="creative-intro reveal">When I'm not crunching numbers, I design fashion. From concept sketch to finished garment — here's a piece I brought to life.</p>
+      <div class="creative-grid">
+        <div class="creative-card reveal">
+          <div class="creative-img-wrap">
+            <img src="images/fashion-sketch.jpg" alt="Fashion design sketch - Embroidered Open Coat">
+          </div>
+          <div class="creative-label">Design Sketch</div>
+          <h3>Look 07 — Embroidered Open Coat</h3>
+          <p>Turquoise silk blending crepe with tonal pink embroidery, puff sleeves, self-tie belt & hidden pockets.</p>
+        </div>
+        <div class="creative-card reveal">
+          <div class="creative-img-wrap">
+            <img src="images/fashion-final.jpg" alt="Finished embroidered coat - design brought to life">
+          </div>
+          <div class="creative-label">Final Product</div>
+          <h3>Sketch to Reality</h3>
+          <p>The finished garment — hand-embroidered turquoise coat with pink floral motifs, tassel belt & gathered cuffs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS -->
   <section id="certs">
     <div class="container">
@@ -629,6 +730,8 @@
       <button onclick="navTo('experience')">Experience</button>
       <button onclick="navTo('skills')">Skills</button>
       <button onclick="navTo('projects')">Projects</button>
+      <button onclick="navTo('media')">Media</button>
+      <button onclick="navTo('creative')">Creative</button>
       <button onclick="navTo('education')">Education</button>
       <button onclick="closeMobile();openContact()">Contact</button>
     </div>
@@ -748,7 +851,7 @@
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
   }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.reveal, .timeline-item, .skill-card, .project-card, .cert-card, .edu-card').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal, .timeline-item, .skill-card, .project-card, .cert-card, .edu-card, .media-card, .creative-card').forEach(el => observer.observe(el));
 
   // NAVIGATION
   function scrollTo(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); }
